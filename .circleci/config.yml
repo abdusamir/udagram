@@ -1,4 +1,5 @@
 version: 2.1
+
 orbs:
   node: circleci/node@5.0.0
   aws-cli: circleci/aws-cli@3.1.1
@@ -13,33 +14,33 @@ jobs:
       - checkout
       - aws-cli/setup
       - restore_cache:
-          keys:
-            - fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
-            - fs-dependencies
+        keys:
+          - fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
+          - fs-dependencies
 
       - run:
-          name: install frontend
-          command: npm run frontend:install
+        name: install frontend
+        command: npm run frontend:install
       - run:
-          name: install backend
-          command: npm run backend:install
+        name: install backend
+        command: npm run backend:install
       - save_cache:
-          paths:
-            - udagram-api/node_modules
-            - udagram-frontend/node_modules
-          key: fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
+        paths:
+        - udagram-api/node_modules
+        - udagram-frontend/node_modules
+        key: fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
       - run:
-        name: build frontend
-        command: npm run frontend:build
+      name: build frontend
+      command: npm run frontend:build
       - run:
-        name: build backend
-        command: npm run backend:build
+      name: build backend
+      command: npm run backend:build
       - run:
-        name: deploy backend
-        command: npm run backend:deploy
+      name: deploy backend
+      command: npm run backend:deploy
       - run:
-        name: deploy frontend
-        command: npm run frontend:deploy
+      name: deploy frontend
+      command: npm run frontend:deploy
 
 workflows:
   build_and_deploy:
