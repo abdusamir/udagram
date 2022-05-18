@@ -34,7 +34,7 @@ jobs:
           command: yarn run frontend:build
       - run:
           name: install zip
-          command: yarn install -g zip
+          command: yarn global add zip
       - run:
           name: build backend
           command: yarn run backend:build
