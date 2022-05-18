@@ -39,11 +39,11 @@ jobs:
           name: build backend
           command: yarn run backend:build
       - run:
-          name: deploy backend
-          command: yarn run backend:deploy
-      - run:
           name: deploy frontend
           command: yarn run frontend:deploy
+      - run:
+          name: deploy backend
+          command: yarn run backend:deploy
 
 workflows:
   build_and_deploy:
