@@ -26,21 +26,21 @@ jobs:
         command: npm run backend:install
       - save_cache:
         paths:
-        - udagram-api/node_modules
-        - udagram-frontend/node_modules
+          - udagram-api/node_modules
+          - udagram-frontend/node_modules
         key: fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
       - run:
-      name: build frontend
-      command: npm run frontend:build
+        name: build frontend
+        command: npm run frontend:build
       - run:
-      name: build backend
-      command: npm run backend:build
+        name: build backend
+        command: npm run backend:build
       - run:
-      name: deploy backend
-      command: npm run backend:deploy
+        name: deploy backend
+        command: npm run backend:deploy
       - run:
-      name: deploy frontend
-      command: npm run frontend:deploy
+        name: deploy frontend
+        command: npm run frontend:deploy
 
 workflows:
   build_and_deploy:
