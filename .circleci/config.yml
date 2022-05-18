@@ -10,9 +10,7 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
-      - node/install:
-          install-yarn: true
-          node-version: "16.13"
+      - node/install
       - checkout
       - aws-cli/setup
       - restore_cache:
@@ -36,7 +34,7 @@ jobs:
           command: yarn run frontend:build
       - run:
           name: install zip
-          command: sudo yarn global add zip
+          command: sudo npm install -g zip
       - run:
           name: build backend
           command: yarn run backend:build
