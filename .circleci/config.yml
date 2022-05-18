@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "node:lts"
+      - image: "cimg/base:stable"
     steps:
       - node/install
       - checkout
@@ -34,7 +34,7 @@ jobs:
           command: yarn run frontend:build
       - run:
           name: install zip
-          command: yarn global add zip
+          command: sudo yarn global add zip
       - run:
           name: build backend
           command: yarn run backend:build
