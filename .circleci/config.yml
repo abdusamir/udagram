@@ -13,22 +13,13 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
-      - restore_cache:
-          keys:
-            - fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
-            - fs-dependencies
-
+      - eb/setup
       - run:
           name: install frontend
           command: yarn run frontend:install
       - run:
           name: install backend
           command: yarn run backend:install
-      - save_cache:
-          paths:
-            - udagram-api/node_modules
-            - udagram-frontend/node_modules
-          key: fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
       - run:
           name: build frontend
           command: yarn run frontend:build
