@@ -8,9 +8,11 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "node:lts"
+      - image: "cimg/base:stable"
     steps:
-      - node/install
+      - node/install:
+          install-yarn: true
+          node-version: "16.13"
       - checkout
       - aws-cli/setup
       - restore_cache:
