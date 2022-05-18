@@ -28,7 +28,7 @@ jobs:
           paths:
             - udagram-api/node_modules
             - udagram-frontend/node_modules
-         key: fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
+          key: fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
       - run:
           name: build frontend
           command: npm run frontend:build
