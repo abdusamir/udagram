@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/base:stable"
+      - image: "node:lts"
     steps:
       - node/install
       - checkout
@@ -20,10 +20,10 @@ jobs:
 
       - run:
           name: install frontend
-          command: npm run frontend:install
+          command: yarn run frontend:install
       - run:
           name: install backend
-          command: npm run backend:install
+          command: yarn run backend:install
       - save_cache:
           paths:
             - udagram-api/node_modules
@@ -31,16 +31,16 @@ jobs:
           key: fs-dependencies-{{checksum "udagram-api/package.json"}}-{{checksum "udagram-frontend/package.json"}}
       - run:
           name: build frontend
-          command: npm run frontend:build
+          command: yarn run frontend:build
       - run:
           name: build backend
-          command: npm run backend:build
+          command: yarn run backend:build
       - run:
           name: deploy backend
-          command: npm run backend:deploy
+          command: yarn run backend:deploy
       - run:
           name: deploy frontend
-          command: npm run frontend:deploy
+          command: yarn run frontend:deploy
 
 workflows:
   build_and_deploy:
