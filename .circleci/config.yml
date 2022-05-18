@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/base:stable"
+      - image: "node:lts"
     steps:
       - node/install
       - checkout
