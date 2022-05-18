@@ -5,6 +5,8 @@
     "frontend:build": "cd udagram-frontend &&yarn run build",
     "backend:build": "cd udagram-api&&yarn run build",
     "frontend:deploy": "cd udagram-frontend&& yarn run deploy",
-    "backend:deploy": "cd udagram-api&& yarn run deploy"
+    "backend:deploy": "cd udagram-api&& yarn run deploy",
+    "frontend:test": "cd udagram-frontend && yarn test",
+    "backend:test": "cd udagram-frontend && yarn test"
   }
 }
