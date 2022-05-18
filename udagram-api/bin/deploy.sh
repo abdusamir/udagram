@@ -1,2 +1,2 @@
-eb use udagram-api-dev
+eb use udgram-api-dev
 eb deploy --staged 
