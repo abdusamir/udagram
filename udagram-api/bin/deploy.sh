@@ -1,1 +1,1 @@
-eb deploy 
+eb deploy udgram-api-dev

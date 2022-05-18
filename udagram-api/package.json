@@ -30,7 +30,8 @@
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^5.21.4",
-    "sequelize-typescript": "^0.6.9"
+    "sequelize-typescript": "^0.6.9",
+    "zip": "^1.2.0"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.26",
