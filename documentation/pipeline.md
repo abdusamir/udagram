@@ -19,3 +19,9 @@
 #### 5- After the installation is done, CircleCI builds the frontend and the backend to make the app ready for production
 
 #### 6- After building both the frontend and backend CircleCI deploys the frontend to S3 bucket and the backend to EB
+
+<br>
+
+### Pipeline illustration
+
+![pipeline-diagram](./pipeline.png)
